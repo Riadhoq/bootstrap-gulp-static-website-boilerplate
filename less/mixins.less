@@ -1,0 +1,38 @@
+.top-dash(@color, @top: -20px, @left: 0) {
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 2rem;
+    border: 2px solid @color;
+    top: @top;
+    left: @left;
+  }
+}
+
+.custom-btn(@bg-color, @color) {
+  background-color: @bg-color;
+  border-color: @bg-color;
+  color: @color;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 20px 55px !important;
+  border-radius: 50px !important;
+  letter-spacing: 2px !important;
+
+  &:hover {
+    color: @bg-color !important;
+    background-color: @color !important;
+    border-color: @color !important;
+  }
+}
+
+.anchor-offset() {
+  &::before {
+    display: block;
+    content: " ";
+    margin-top: -75px;
+    padding-top: 75px;
+    visibility: hidden;
+  }
+}
