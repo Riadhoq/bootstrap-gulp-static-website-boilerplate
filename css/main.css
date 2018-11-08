@@ -1,11 +1,5 @@
 @font-face {
   font-family: 'Montserrat';
-  font-style: italic;
-  font-weight: 500;
-  src: local('Montserrat Medium Italic'), local('Montserrat-MediumItalic'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUPjIg1_i6t8kCHKm459WxZOg3z_PZ1.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
@@ -35,8 +29,8 @@ body {
   font-family: "Montserrat", sans-serif;
   text-rendering: optimizeLegibility;
   max-width: 100%;
-  letter-spacing: 1px;
-  line-height: 2;
+  letter-spacing: 0.5px;
+  line-height: 1.7;
   background-color: white;
 }
 h1,
@@ -52,6 +46,10 @@ h6,
 .h5,
 .h6 {
   font-weight: 500;
+}
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
 @media only screen and (max-width: 320px) {
   html,

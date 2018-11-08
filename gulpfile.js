@@ -4,6 +4,10 @@ var less = require("gulp-less");
 var minifyCss = require("gulp-csso");
 var rename = require("gulp-rename");
 var imagemin = require("gulp-imagemin");
+var autoprefixer = require("gulp-autoprefixer");
+const babel = require('gulp-babel');
+var uglify = require("gulp-uglify");
+
 gulp.task("less", function() {
   return gulp
     .src("less/main.less")
@@ -18,6 +22,12 @@ gulp.task("less", function() {
 gulp.task("css-minify", function() {
   return gulp
     .src("css/main.css")
+    .pipe(
+      autoprefixer({
+        browsers: ["last 4 versions"],
+        cascade: false
+      })
+    )
     .pipe(minifyCss())
     .pipe(
       rename({
@@ -25,6 +35,21 @@ gulp.task("css-minify", function() {
       })
     )
     .pipe(gulp.dest("css/min"));
+});
+
+gulp.task("js-minify", function() {
+  return gulp
+    .src("js/index.js")
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(uglify())
+    .pipe(
+      rename({
+        suffix: ".min"
+      })
+    )
+    .pipe(gulp.dest("js/min"));
 });
 
 gulp.task("imagemin", function() {
@@ -36,5 +61,6 @@ gulp.task("imagemin", function() {
 
 gulp.task("watch", function() {
   gulp.watch("less/*.less", ["less"]);
+  gulp.watch("js/*.js", ["js-minify"]);
   gulp.watch("css/main.css", ["css-minify"]);
 });

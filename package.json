@@ -1,5 +1,5 @@
 {
-  "name": "feecon-speakers-2019",
+  "name": "fee-bootstrap4-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -10,12 +10,19 @@
   "license": "ISC",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-csso": "^3.0.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-less": "^4.0.1",
     "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1",
     "jshint": "^2.9.6",
     "less": "^3.8.1",
     "node-less": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "gulp-babel": "^8.0.0"
   }
 }
