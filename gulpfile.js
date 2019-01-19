@@ -1,11 +1,9 @@
-// Less configuration
 var gulp = require("gulp");
 var less = require("gulp-less");
 var minifyCss = require("gulp-csso");
 var rename = require("gulp-rename");
 var imagemin = require("gulp-imagemin");
 var autoprefixer = require("gulp-autoprefixer");
-const babel = require('gulp-babel');
 var uglify = require("gulp-uglify");
 
 gulp.task("less", function() {
@@ -40,9 +38,6 @@ gulp.task("css-minify", function() {
 gulp.task("js-minify", function() {
   return gulp
     .src("js/index.js")
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
     .pipe(uglify())
     .pipe(
       rename({
