@@ -13,5 +13,6 @@
 ### Setup
   1. Install VScode and open the repo
   2. Run `npm install`
-  3. Run `gulp watch`
+  3. Run `npm run watch`
   4. Hit "Go Live" button from live-server
+  5. Run `npm run build` to run all tasks
